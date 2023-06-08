@@ -1,0 +1,9 @@
+.commonStyles {
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+}
+
+.delIcon, .editIcon {
+  @extend .commonStyles
+}

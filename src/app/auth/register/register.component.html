@@ -1,0 +1,20 @@
+<h1>Register New User</h1>
+
+<form [formGroup]="registerUser" (ngSubmit)="submitData()">
+  <div class="mb-3">
+    <label for="user-name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="user-name" placeholder="Enter username" formControlName="username">
+  </div>
+
+  <div class="mb-3">
+    <label for="user-email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="user-email" placeholder="Enter email" formControlName="useremail">
+  </div>
+
+  <div class="mb-3">
+    <label for="user-password" class="form-label">Password</label>
+    <input type="password" class="form-control" id="user-password" placeholder="Enter password" formControlName="password">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="registerUser.invalid">Register</button>
+</form>

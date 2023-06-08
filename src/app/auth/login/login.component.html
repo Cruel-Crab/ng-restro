@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<form [formGroup]="loginUser" (ngSubmit)="submitData()">
+  <div class="mb-3">
+    <label for="user-mail" class="form-label">Email: </label>
+    <input type="email" class="form-control" id="user-mail" formControlName="email" placeholder="Enter email">
+  </div>
+
+  <div class="mb-3">
+    <label for="user-password" class="form-label">Email: </label>
+    <input type="password" class="form-control" id="user-password" formControlName="password" placeholder="Enter password">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="loginUser.invalid">Login</button>
+</form>

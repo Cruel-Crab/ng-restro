@@ -1,0 +1,29 @@
+<h1>Restaurant Listing</h1>
+<div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="showDeleteAlert">
+  <strong>Success !</strong> Record deleted successfully.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="closeAlert()"></button>
+</div>
+
+<table class="table table-striped table-hover mt-2">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">City</th>
+      <th scope="col">Website</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of collection; let i=index">
+      <th>{{i+1}}</th>
+      <td>{{item.name}}</td>
+      <td>{{item.city}}</td>
+      <td>{{item.website}}</td>
+      <td>
+        <p class="delIcon text-danger" (click)="deleteItem(item.id)"><i class="fas fa-trash"></i></p>
+        <p class="editIcon text-primary ms-3" routerLink="/crud/update/{{item.id}}"><i class="fas fa-edit"></i></p>
+      </td>
+    </tr>
+  </tbody>
+</table>

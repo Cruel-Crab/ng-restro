@@ -1,0 +1,23 @@
+<h1>Update Restaurant</h1>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="showEditAlert">
+  <strong>Success !</strong> Data updated successfully.
+  <button class="btn-close" type="button" data-bs-dismiss="alert" (click)="closeAlert()"></button>
+</div>
+<form [formGroup]="updateRestaurant" (ngSubmit)="submitData()">
+  <div class="mb-3">
+    <label for="rname" class="form-label">Name</label>
+    <input type="text" class="form-control" id="rname" placeholder="Enter restaurant name" formControlName="name">
+  </div>
+
+  <div class="mb-3">
+    <label for="rcity" class="form-label">Address</label>
+    <input type="text" class="form-control" id="rcity" placeholder="Enter restaurant city" formControlName="city">
+  </div>
+
+  <div class="mb-3">
+    <label for="rwebsite" class="form-label">Website</label>
+    <input type="text" id="rwebsite" class="form-control" placeholder="Enter restaurant website" formControlName="website">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="checkDataChange() || !this.updateRestaurant.valid">Update</button>
+</form>
